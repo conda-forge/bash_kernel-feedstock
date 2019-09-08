@@ -26,6 +26,8 @@ requirements:
     - pip
     - python
     - flit
+    # flit tries to validate the install on windows.
+    - pexpect
     - ipykernel
   run:
     - python

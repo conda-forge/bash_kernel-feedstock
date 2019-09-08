@@ -10,8 +10,13 @@ source:
   sha256: a08c84eddd8179de5234105821fd5cc210015671a0bd3cd0bc4f631c475e1670
 
 build:
-  number: 0
-  noarch: python
+  number: 1
+  # doesn't give the correct path for Windows in the json file
+  # https://github.com/conda-forge/staged-recipes/issues/9465
+  # noarch: python
+  skip: True # [py==27]
+  # Windows needs additional dependencies that aren't fully working on
+  skip: True # [win]
   script:
     - {{ PYTHON }} -m flit install --deps none
     - {{ PYTHON }} -m bash_kernel.install --prefix {{ PREFIX }}
@@ -19,14 +24,15 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.0
+    - python
     - flit
     - ipykernel
   run:
-    - python >=3.0
+    - python
     - ipykernel
     - pexpect
-    - bash
+    - bash  # [unix]
+    - m2-bash  # [win]
 
 test:
   imports:

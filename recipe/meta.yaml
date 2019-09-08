@@ -15,8 +15,9 @@ build:
   # https://github.com/conda-forge/staged-recipes/issues/9465
   # noarch: python
   skip: True  # [py==27]
-  # Windows needs additional dependencies that aren't fully working on
-  # skip: True # [win]
+  # Windows needs small modifications to avoid the use of pexect.spawn
+  # https://github.com/takluyver/bash_kernel/issues/96
+  skip: True # [win]
   script:
     - {{ PYTHON }} -m flit install --deps none
     - {{ PYTHON }} -m bash_kernel.install --prefix {{ PREFIX }}
@@ -27,7 +28,7 @@ requirements:
     - python
     - flit
     # flit tries to validate the install on windows.
-    - pexpect
+    # - pexpect
     - ipykernel
   run:
     - python

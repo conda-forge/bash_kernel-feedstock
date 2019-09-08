@@ -11,7 +11,8 @@ source:
 
 build:
   number: 1
-  noarch: python
+  skip: True  # [win]
+  skip: True  # [py==27]
   script:
     - {{ PYTHON }} -m flit install --deps none
     - {{ PYTHON }} -m bash_kernel.install --prefix {{ PREFIX }}
@@ -19,11 +20,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.0
+    - python
     - flit
     - ipykernel
   run:
-    - python >=3.0
+    - python
     - ipykernel
     - pexpect
     - bash

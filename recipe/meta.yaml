@@ -14,7 +14,7 @@ build:
   # doesn't give the correct path for Windows in the json file
   # https://github.com/conda-forge/staged-recipes/issues/9465
   # noarch: python
-  skip: True # [py==27]
+  skip: True  # [py==27]
   # Windows needs additional dependencies that aren't fully working on
   # skip: True # [win]
   script:
@@ -31,8 +31,8 @@ requirements:
     - python
     - ipykernel
     - pexpect
-    - bash  # [unix]
-    - m2-bash  # [win]
+    - bash      # [unix]
+    - m2-bash   # [win]
 
 test:
   imports:

@@ -10,11 +10,10 @@ source:
   sha256: a08c84eddd8179de5234105821fd5cc210015671a0bd3cd0bc4f631c475e1670
 
 build:
-  number: 1
-  # doesn't give the correct path for Windows in the json file
-  # https://github.com/conda-forge/staged-recipes/issues/9465
-  # noarch: python
   skip: True  # [py==27]
+  number: 1
+  # noarch: python doesn't give the correct path for Windows in the json file
+  # https://github.com/conda-forge/staged-recipes/issues/9465
   # Windows needs small modifications to avoid the use of pexect.spawn
   # https://github.com/takluyver/bash_kernel/issues/96
   skip: True # [win]
@@ -28,7 +27,7 @@ requirements:
     - python
     - flit
     # flit tries to validate the install on windows.
-    # - pexpect
+    - pexpect
     - ipykernel
   run:
     - python

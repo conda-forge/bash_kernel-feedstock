@@ -16,7 +16,7 @@ build:
   # noarch: python
   skip: True # [py==27]
   # Windows needs additional dependencies that aren't fully working on
-  skip: True # [win]
+  # skip: True # [win]
   script:
     - {{ PYTHON }} -m flit install --deps none
     - {{ PYTHON }} -m bash_kernel.install --prefix {{ PREFIX }}

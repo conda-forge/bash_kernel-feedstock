@@ -11,7 +11,7 @@ source:
 
 build:
   skip: True  # [py==27]
-  number: 3
+  number: 4
   # noarch: python doesn't give the correct path for Windows in the json file
   # https://github.com/conda-forge/staged-recipes/issues/9465
   # Windows needs small modifications to avoid the use of pexect.spawn

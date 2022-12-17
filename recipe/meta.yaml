@@ -1,5 +1,5 @@
 {% set name = "bash_kernel" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4e525bd1a858a9668c1e911be61c72b02825ce9c553b1975a86b17c13824f4ba
+  sha256: 0423f0512ef6f83a654e1439a369718899a38f27948fe21b665b2df1dbf3a7c7
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     - {{ PYTHON }} -m flit install --deps none

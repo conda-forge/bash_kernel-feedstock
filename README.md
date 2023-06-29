@@ -1,11 +1,11 @@
-About bash_kernel
-=================
+About bash_kernel-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bash_kernel-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/takluyver/bash_kernel
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bash_kernel-feedstock/blob/main/LICENSE.txt)
 
 Summary: A Jupyter kernel for bash
 

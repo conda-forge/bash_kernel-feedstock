@@ -1,5 +1,5 @@
 {% set name = "bash_kernel" %}
-{% set version = "0.9.1" %}
+{% set version = "0.9.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0183d53e360ff9b68471052a9a289a81621732516b034e278e9720b5d15a162b
+  sha256: 81bd6bae3d980d208fee10d8b003e071d972ff02fdfebcae0b7d7c2be4c18b39
 
 build:
   number: 0

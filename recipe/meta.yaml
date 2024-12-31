@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 9f7a03811ca7d9cb1fbff8082237cf0450b97182252fd0b80587a16b65e66d58
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - {{ PYTHON }} -m flit install --deps none
@@ -19,19 +19,21 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
     - flit
     # flit tries to validate the install on windows.
     - pexpect
     - ipykernel
   run:
     - __unix
-    - python >=3
+    - python >={{ python_min }}
     - ipykernel
     - pexpect
     - bash
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - bash_kernel
   commands:

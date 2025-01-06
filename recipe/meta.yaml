@@ -24,12 +24,14 @@ requirements:
     # flit tries to validate the install on windows.
     - pexpect
     - ipykernel
+    - filetype
   run:
     - __unix
     - python >={{ python_min }}
     - ipykernel
     - pexpect
     - bash
+    - filetype
 
 test:
   requires:
